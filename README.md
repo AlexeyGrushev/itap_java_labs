@@ -1,18 +1,31 @@
-## Getting Started
+Репозиторий лабораторных работ — "Информационные системы и программирование"
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Этот репозиторий содержит лабораторные работы по предмету "Информационные системы и программирование".
 
-## Folder Structure
+Структура репозитория:
 
-The workspace contains two folders by default, where:
+- `src/` — исходники лабораторных работ. Каждая лабораторная находится в подпапке вида `src/labX`, где `X` — номер лабораторной работы.
+- `bin/` — скомпилированные файлы (классы) при наличии.
+- `lib/` — сторонние библиотеки (если используются).
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Примеры путей:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+```
+src/lab1/       # исходники для лабораторной 1
+src/lab2/       # исходники для лабораторной 2
+...
+```
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Краткие инструкции по сборке и запуску:
 
-## Dependency Management
+1. Скомпилируйте Java-файлы из `src/` в `bin/` (в корне репозитория):
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```bash
+javac -d bin -sourcepath src $(find src -name "*.java")
+```
+
+2. Запустите класс с методом `main`, например `App`:
+
+```bash
+java -cp bin App
+```
