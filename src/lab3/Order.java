@@ -2,9 +2,7 @@ package lab3;
 
 import java.util.*;
 
-/**
- * Класс Order для хранения информации о заказе
- */
+
 public class Order {
     private List<Dish> dishes;
     private double totalCost;

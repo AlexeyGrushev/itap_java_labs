@@ -2,9 +2,7 @@ package lab3;
 
 import java.util.*;
 
-/**
- * Система управления заказами ресторана с использованием HashMap
- */
+
 public class RestaurantOrderSystem {
     private HashMap<Integer, Order> orders;
     
@@ -12,17 +10,13 @@ public class RestaurantOrderSystem {
         orders = new HashMap<>();
     }
     
-    /**
-     * Добавляет заказ для столика
-     */
+
     public void addOrder(int tableNumber, Order order) {
         orders.put(tableNumber, order);
         System.out.println("Заказ для столика №" + tableNumber + " добавлен.");
     }
     
-    /**
-     * Ищет заказ по номеру столика
-     */
+
     public Order findOrder(int tableNumber) {
         Order order = orders.get(tableNumber);
         if (order != null) {
@@ -34,9 +28,7 @@ public class RestaurantOrderSystem {
         return order;
     }
     
-    /**
-     * Удаляет заказ по номеру столика
-     */
+
     public void removeOrder(int tableNumber) {
         Order removed = orders.remove(tableNumber);
         if (removed != null) {
@@ -46,9 +38,7 @@ public class RestaurantOrderSystem {
         }
     }
     
-    /**
-     * Выводит все активные заказы
-     */
+
     public void displayAllOrders() {
         if (orders.isEmpty()) {
             System.out.println("Нет активных заказов.");
@@ -62,9 +52,7 @@ public class RestaurantOrderSystem {
         }
     }
     
-    /**
-     * Вычисляет общую выручку
-     */
+
     public double getTotalRevenue() {
         double total = 0;
         for (Order order : orders.values()) {
@@ -73,9 +61,6 @@ public class RestaurantOrderSystem {
         return total;
     }
     
-    /**
-     * Возвращает количество активных заказов
-     */
     public int getOrderCount() {
         return orders.size();
     }

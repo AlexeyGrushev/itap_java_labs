@@ -1,8 +1,6 @@
 package lab3;
 
-/**
- * Класс для представления блюда в ресторане
- */
+
 public class Dish {
     private String name;
     private double price;

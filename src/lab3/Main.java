@@ -2,14 +2,11 @@ package lab3;
 
 import java.util.*;
 
-/**
- * Главный класс для демонстрации работы системы
- */
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== ЗАДАНИЕ 1: Собственная реализация HashTable ===\n");
         
-        // Демонстрация работы собственной хэш-таблицы
         HashTable<String, Integer> customHashTable = new HashTable<>();
         
         customHashTable.put("apple", 5);
@@ -28,7 +25,6 @@ public class Main {
         
         RestaurantOrderSystem restaurant = new RestaurantOrderSystem();
         
-        // Создание заказов
         List<Dish> dishes1 = Arrays.asList(
             new Dish("Борщ", 350.0),
             new Dish("Котлета по-киевски", 450.0),
@@ -50,25 +46,20 @@ public class Main {
         );
         Order order3 = new Order(dishes3, "14:00");
         
-        // Добавление заказов
         restaurant.addOrder(5, order1);
         restaurant.addOrder(12, order2);
         restaurant.addOrder(7, order3);
         
         System.out.println("\nКоличество активных заказов: " + restaurant.getOrderCount());
         
-        // Поиск заказа
         restaurant.findOrder(12);
         restaurant.findOrder(99);
         
-        // Вывод всех заказов
         restaurant.displayAllOrders();
         
-        // Общая выручка
         System.out.println("\nОбщая выручка: " + 
             String.format("%.2f", restaurant.getTotalRevenue()) + " руб.");
         
-        // Удаление заказа
         System.out.println();
         restaurant.removeOrder(5);
         
@@ -77,7 +68,6 @@ public class Main {
         System.out.println("Общая выручка: " + 
             String.format("%.2f", restaurant.getTotalRevenue()) + " руб.");
         
-        // Демонстрация работы методов equals() и hashCode()
         System.out.println("\n=== Демонстрация equals() и hashCode() ===\n");
         
         List<Dish> testDishes = Arrays.asList(new Dish("Тест", 100.0));
